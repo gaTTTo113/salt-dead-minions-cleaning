@@ -12,7 +12,7 @@ minions_status.remove("")
 this_is_minions_name = True
 answered_true = []
 answered_false = []
-# all minions here
+# minions list here
 minions_names = []
 
 for message in minions_status:
@@ -22,6 +22,7 @@ for message in minions_status:
         if message == '    True':
             answered_true.append(minions_names[minions_names.__len__() - 1][:-1])
         else:
+            # all types failed here
             answered_false.append(minions_names[minions_names.__len__() - 1][:-1])
     this_is_minions_name = not this_is_minions_name
 
@@ -57,6 +58,7 @@ for minion_true in answered_true:
 
 # separating dead/not dead
 dead_minions = []
+# not_dead_yet means server dosn't respond, but wasn't listed before/or in time period
 not_dead_yet = []
 for new_minion_to_delete in new_minions_to_delete:
     for minion_to_delete in potential_to_delete:
